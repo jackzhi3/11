@@ -45,8 +45,50 @@
 
     <script>
         // 请替换为你的合约地址和ABI
-        const contractAddress = 'YOUR_CONTRACT_ADDRESS_HERE'; // 例如 '0x1234...'
-        const contractABI = [ /* 粘贴你的合约ABI数组 */ ];
+        const contractAddress = '0x24efAcbc1a5420eb4edE48c39a1BaaDD22122bC9'; // 例如 '0x1234...'
+        const contractABI = [ [
+	{
+		"inputs": [],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Received",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	}
+] ];
 
         let web3;
         let contractInstance;
